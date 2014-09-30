@@ -1,6 +1,7 @@
 package core.mapping;
 
 import core.Injector;
+import org.junit.After;
 import org.junit.Before;
 import org.junit.Test;
 
@@ -22,6 +23,13 @@ public class InjectionMappingImplTest {
         this.injectionMappingSpy = spy(this.injectionMapping);
     }
 
+    @After
+    public void tearDown() throws Exception {
+        this.storeMapping = null;
+        this.injectionMapping = null;
+        this.injectionMappingSpy = null;
+    }
+
     @Test
     public void testToValue() throws Exception {
         final Class<String> modelClass = String.class;
@@ -35,7 +43,7 @@ public class InjectionMappingImplTest {
         final Class<Number> imodelClass = Number.class;
         final Class<Byte> modelClass = Byte.class;
         this.injectionMappingSpy.toSingleton(imodelClass, modelClass);
-        verify(this.injectionMappingSpy).toSingleton(imodelClass,modelClass);
+        verify(this.injectionMappingSpy).toSingleton(imodelClass, modelClass);
     }
 
     @Test
@@ -57,6 +65,6 @@ public class InjectionMappingImplTest {
     public void testSetInject() throws Exception {
         Injector injector = mock(Injector.class);
         final InjectionMapping _injectionMapping = ((InjectionMappingImpl) this.injectionMapping).setInject(injector);
-        assertEquals("Not set inject",this.injectionMapping,_injectionMapping);
+        assertEquals("Not set inject", this.injectionMapping, _injectionMapping);
     }
 }

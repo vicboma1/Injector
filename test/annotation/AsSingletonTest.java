@@ -1,5 +1,6 @@
 package annotation;
 
+import org.junit.After;
 import org.junit.Before;
 import org.junit.Test;
 
@@ -11,12 +12,17 @@ public class AsSingletonTest {
 
     @Before
     public void setUp() throws Exception {
-        mockAsSingleton = new MockAsSingleton();
+        this.mockAsSingleton = new MockAsSingleton();
+    }
+
+    @After
+    public void tearDown() throws Exception {
+        this.mockAsSingleton = null;
     }
 
     @Test
     public void annotation() throws Exception {
-        assertTrue(mockAsSingleton.getClass().isAnnotationPresent(AsSingleton.class));
+        assertTrue(this.mockAsSingleton.getClass().isAnnotationPresent(AsSingleton.class));
     }
 }
 

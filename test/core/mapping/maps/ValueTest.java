@@ -1,6 +1,7 @@
 package core.mapping.maps;
 
 import core.provider.Provider;
+import org.junit.After;
 import org.junit.Assert;
 import org.junit.Before;
 import org.junit.Test;
@@ -18,6 +19,12 @@ public class ValueTest {
     public void setUp() throws Exception {
         provider = mock(Provider.class);
         value = new Value(expected);
+    }
+
+    @After
+    public void tearDown() throws Exception {
+        provider =  null;
+        value = null;
     }
 
     @Test

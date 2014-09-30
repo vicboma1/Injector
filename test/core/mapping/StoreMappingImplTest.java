@@ -2,6 +2,7 @@ package core.mapping;
 
 import core.mapping.maps.Instance;
 import core.mapping.maps.Value;
+import org.junit.After;
 import org.junit.Before;
 import org.junit.Test;
 
@@ -22,6 +23,11 @@ public class StoreMappingImplTest {
         this.storeMapping = StoreMappingImpl.create();
     }
 
+    @After
+    public void tearDown() throws Exception {
+        this.storeMapping = null;
+    }
+
     @Test
     public void testEntrySet() throws Exception {
         this.expected = new Expected(storeMapping);
@@ -40,10 +46,8 @@ public class StoreMappingImplTest {
 
     @Test
     public void testContainsKey() throws Exception {
-        assertNull("Contains", this.storeMapping.containsKey(expected.getClazz()));
         this.expected = new Expected(storeMapping);
         assertTrue("Not contains", this.storeMapping.containsKey(expected.getClazz()));
-
     }
 
     @Test

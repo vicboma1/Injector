@@ -1,5 +1,9 @@
 package utils;
 
+import org.junit.After;
+import org.junit.Before;
+import org.junit.Test;
+
 import java.lang.reflect.Field;
 import java.lang.reflect.Method;
 
@@ -9,12 +13,17 @@ public class UtilsTest {
 
     private Mock mock;
 
-    @org.junit.Before
+    @Before
     public void setUp() throws Exception {
         mock = new Mock();
     }
 
-    @org.junit.Test
+    @After
+    public void tearDown() throws Exception {
+        this.mock = null;
+    }
+
+    @Test
     public void testInvokeMethod() throws Exception {
         final String expected = "constructor";
         final String toStringMethod = "toString";

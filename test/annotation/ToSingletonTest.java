@@ -1,5 +1,6 @@
 package annotation;
 
+import org.junit.After;
 import org.junit.Before;
 import org.junit.Test;
 
@@ -11,7 +12,12 @@ public class ToSingletonTest {
 
     @Before
     public void setUp() throws Exception {
-        mockAsSingleton = new MockAsSingletonImpl();
+        this.mockAsSingleton = new MockAsSingletonImpl();
+    }
+
+    @After
+    public void tearDown() throws Exception {
+        this.mockAsSingleton = null;
     }
 
     @Test

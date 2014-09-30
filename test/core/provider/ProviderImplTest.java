@@ -1,6 +1,7 @@
 package core.provider;
 
 import core.Injector;
+import org.junit.After;
 import org.junit.Assert;
 import org.junit.Before;
 import org.junit.Test;
@@ -15,6 +16,11 @@ public class ProviderImplTest {
     @Before
     public void setUp() throws Exception {
         provider = mock(Provider.class);
+    }
+
+    @After
+    public void tearDown() throws Exception {
+        this.provider = null;
     }
 
     @Test

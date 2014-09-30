@@ -2,6 +2,7 @@ package core.mapping.maps;
 
 import core.Injector;
 import core.provider.Provider;
+import org.junit.After;
 import org.junit.Assert;
 import org.junit.Before;
 import org.junit.Test;
@@ -21,6 +22,13 @@ public class PrototypeTest {
         provider =  mock(Provider.class);
         final Class<Mock> clazz = Mock.class;
         prototype = new Prototype(clazz,injector);
+    }
+
+    @After
+    public void tearDown() throws Exception {
+        injector = null;
+        provider =  null;
+        prototype = null;
     }
 
     @Test
