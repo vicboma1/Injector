@@ -15,15 +15,17 @@ public interface Injector
 
     <T> T getInstance(Class<? extends T> modelClass) throws Exception ;
 
-    <T> T newInstance(Class<? extends T> modelClass);
-
     <T> Boolean hasMapping(Class<? extends T> modelClass);
+
+    Injector parent();
+
+    void parent(Injector parent);
 
     void dispose() throws Exception;
 
     <T> T unmap(Class<T> modelClass) throws Exception;
 
-    Injector createChild();
+    Injector createChild() throws Exception;
 
     InjectionMapping map();
 

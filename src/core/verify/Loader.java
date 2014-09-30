@@ -45,7 +45,6 @@ public class Loader {
             if (!annotatedInterface.getType().getClass().isInstance(IVerify.class))
                 verifyMetadata.add("ISingleton");
         }
-
     }
 
     private static void hasPreDestroy() throws NoSuchMethodException {
