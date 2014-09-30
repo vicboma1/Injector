@@ -55,7 +55,6 @@ public class StoreMappingImplTest {
         this.storeMapping.put(clazz, test);
         final Instance instanceGetTrue = this.storeMapping.get(clazz);
         assertEquals("Not get", test, instanceGetTrue);
-
     }
 
     @Test
