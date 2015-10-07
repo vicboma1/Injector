@@ -57,3 +57,7 @@ injector.injectInto(pojoAutoAsSingleton);
 Verify verifyAutoAsSingleton = injector.getInstance(Verify.class);
 ```
 
+
+
+[![Bitdeli Badge](https://d2weczhvl823v0.cloudfront.net/vicboma1/injector/trend.png)](https://bitdeli.com/free "Bitdeli Badge")
+
