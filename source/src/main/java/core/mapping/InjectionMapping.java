@@ -8,4 +8,6 @@ public interface InjectionMapping {
     <T> void toSingleton(Class<T> ImodelClass, Class<? extends T> modelClass);
     <T> void asSingleton(Class<? extends T> modelClass);
     <T> void toPrototype(Class<T> ImodelClass, Class<? extends T> modelClass);
+    <T> void isInterface(Class<? extends T> modelClass, String message);
+
 }

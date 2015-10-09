@@ -17,7 +17,7 @@ public class InjectionMappingImpl implements InjectionMapping {
         return new InjectionMappingImpl(storeMapping);
     }
 
-    InjectionMappingImpl(StoreMapping storeMapping) {
+    public InjectionMappingImpl(StoreMapping storeMapping) {
         this.storeMapping = storeMapping;
     }
 
@@ -44,7 +44,7 @@ public class InjectionMappingImpl implements InjectionMapping {
         this.storeMapping.put(modelClass, new Singleton(modelClass, this.injector));
     }
 
-    private <T> void isInterface(Class<? extends T> modelClass, String message) {
+    public <T> void isInterface(Class<? extends T> modelClass, String message) {
         if(modelClass.isInterface())
             throw new RuntimeException(message + modelClass);
     }

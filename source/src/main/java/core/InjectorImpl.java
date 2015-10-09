@@ -39,10 +39,6 @@ public class InjectorImpl implements Injector {
         this.injectionMapping = injectionMapping;
         this.providerMapping = providerMapping;
         this.provider = provider;
-        loadProviderMapping();
-    }
-
-    private void loadProviderMapping() {
         this.providerMapping.put(this.provider, this.provider);
     }
 
@@ -60,19 +56,12 @@ public class InjectorImpl implements Injector {
 
     @Override
     public void injectInto(Object instance) throws Exception {
-        reflectField(instance);
-        reflectMethod(instance);
-    }
-
-    private void reflectMethod(Object instance) throws Exception {
         for (Method method : instance.getClass().getDeclaredMethods()) {
             if (method.getAnnotation(PostConstruct.class) != null) {
                 Utils.invokeMethod(method, instance);
             }
         }
-    }
 
-    private void reflectField(Object instance) throws Exception {
         for (Field field : instance.getClass().getDeclaredFields()) {
             if (field.getAnnotation(Inject.class) != null) {
                 Object value = getInstance(field.getType());
@@ -86,9 +75,10 @@ public class InjectorImpl implements Injector {
         for (Map.Entry<Class, Instance> entry : this.storeMapping.entrySet()) {
             Class key = entry.getKey();
             Instance value = this.storeMapping.remove(key);
+            final Provider provider = this.providerMapping.get(key);
             for (Method method : key.getDeclaredMethods()) {
                 if (method.getAnnotation(PreDispose.class) != null) {
-                    Utils.invokeMethod(method, value);
+                    Utils.invokeMethod(method, value.get(provider));
                 }
             }
         }
@@ -143,7 +133,7 @@ public class InjectorImpl implements Injector {
         this.parent = (InjectorImpl)parent;
     }
 
-    private <T> T RunException(Class<? extends T> clazz) {
+    public <T> T RunException(Class<? extends T> clazz) {
         throw (new RuntimeException("Can't find map " + clazz));
     }
 
