@@ -1,5 +1,8 @@
 Injector
 ========
+[![Coverage Status](https://coveralls.io/repos/vicboma1/Injector/badge.svg?branch=master&service=github)](https://coveralls.io/github/vicboma1/Injector?branch=master)
+[![Maven Central](https://maven-badges.herokuapp.com/maven-central/org.eluder.coveralls/coveralls-maven-plugin/badge.svg)](https://maven-badges.herokuapp.com/maven-central/org.eluder.coveralls/coveralls-maven-plugin/)
+[![Bitdeli Badge](https://d2weczhvl823v0.cloudfront.net/vicboma1/injector/trend.png)](https://bitdeli.com/free "Bitdeli Badge")
 
 IoC Container - Dependency Injector for Java/Scala
 
@@ -59,5 +62,4 @@ Verify verifyAutoAsSingleton = injector.getInstance(Verify.class);
 
 
 
-[![Bitdeli Badge](https://d2weczhvl823v0.cloudfront.net/vicboma1/injector/trend.png)](https://bitdeli.com/free "Bitdeli Badge")
 
