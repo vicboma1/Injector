@@ -3,6 +3,8 @@ Injector
 [![Build Status](https://travis-ci.org/vicboma1/Injector.svg?branch=master)](https://travis-ci.org/vicboma1/Injector)[![Coverage Status](https://coveralls.io/repos/vicboma1/Injector/badge.svg?branch=master&service=github)](https://coveralls.io/github/vicboma1/Injector?branch=master)
 [![Maven Central](https://maven-badges.herokuapp.com/maven-central/org.eluder.coveralls/coveralls-maven-plugin/badge.svg)](https://maven-badges.herokuapp.com/maven-central/org.eluder.coveralls/coveralls-maven-plugin/)
 [![Bitdeli Badge](https://d2weczhvl823v0.cloudfront.net/vicboma1/injector/trend.png)](https://bitdeli.com/free "Bitdeli Badge")
+[![Analytics](https://ga-beacon.appspot.com/UA-68661131-1/Injector/readme)](https://github.com/igrigorik/ga-beacon)
+
 
 IoC Container - Dependency Injector for Java/Scala
 
