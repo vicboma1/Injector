@@ -7,7 +7,6 @@ import org.junit.Before;
 import org.junit.Test;
 
 import static org.mockito.Mockito.mock;
-import static org.mockito.Mockito.when;
 
 public class ValueTest {
 
@@ -30,7 +29,6 @@ public class ValueTest {
     @Test
     public void testGet() throws Exception {
         final String expected = String.valueOf("");
-        when(value.get(provider)).thenReturn(expected);
         final Object clazz = value.get(provider);
         Assert.assertEquals("Not value", expected, clazz);
     }
