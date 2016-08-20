@@ -5,7 +5,7 @@ Injector
 [![Analytics](https://ga-beacon.appspot.com/UA-68658653-1/injector/readme)](https://github.com/igrigorik/ga-beacon)
 
 
-IoC Container - Dependency Injector for Java/Scala
+IoC Container - Dependency Injector for Java/Scala/Kotlin
 
 ##Main Test
 
