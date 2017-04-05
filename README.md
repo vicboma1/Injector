@@ -7,10 +7,10 @@ Injector
 
 IoC Container - Dependency Injector for Java/Scala/Kotlin
 
-##Main Test
+## Main Test
 
-###POJO's 
-####Implementation
+### POJO's 
+#### Implementation
 ```java
 @AsSingleton                                                           
 public class Verify implements IVerify {
@@ -37,7 +37,7 @@ public class Verify implements IVerify {
 }
 ```
    
-####API  
+#### API  
 ```java 
 @ToSingleton(toClass = "core.verify.Verify")
 public interface IVerify {
